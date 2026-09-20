@@ -1,0 +1,78 @@
+@import 'tailwindcss';
+
+:root{
+  --bg:#020409;
+  --bg2:#050b12;
+  --panel:#071019;
+  --panel2:#0a151f;
+  --line:#17303d;
+  --line2:#245061;
+  --ice:#66e7ff;
+  --ice2:#b7f6ff;
+  --blue:#159ac2;
+  --muted:#718391;
+  --white:#f4fbff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{
+ margin:0;color:var(--white);background:
+ radial-gradient(circle at 50% -10%,rgba(54,218,255,.16),transparent 30%),
+ radial-gradient(circle at 100% 40%,rgba(0,146,194,.08),transparent 25%),
+ linear-gradient(180deg,#020409 0%,#03070c 55%,#020409 100%);
+ font-family:Arial,Helvetica,sans-serif;overflow-x:hidden
+}
+body:before{content:"";position:fixed;inset:0;pointer-events:none;opacity:.22;background:repeating-linear-gradient(0deg,rgba(255,255,255,.025) 0,rgba(255,255,255,.025) 1px,transparent 1px,transparent 4px);mix-blend-mode:overlay;z-index:100}
+a{text-decoration:none;color:inherit}
+
+.glass{background:linear-gradient(145deg,rgba(8,19,28,.96),rgba(3,8,13,.94));border:1px solid var(--line);box-shadow:0 24px 70px rgba(0,0,0,.42),inset 0 1px 0 rgba(255,255,255,.025)}
+.neon{border-color:rgba(102,231,255,.42);box-shadow:0 0 0 1px rgba(102,231,255,.1),0 0 42px rgba(35,208,255,.13),inset 0 0 30px rgba(35,208,255,.035)}
+.gridbg{position:relative;background-image:linear-gradient(rgba(102,231,255,.055) 1px,transparent 1px),linear-gradient(90deg,rgba(102,231,255,.055) 1px,transparent 1px);background-size:48px 48px}
+.gridbg:after{content:"";position:absolute;left:0;right:0;bottom:0;height:180px;background:linear-gradient(180deg,transparent,rgba(2,4,9,.95));pointer-events:none}
+.text-ice{color:var(--ice);text-shadow:0 0 22px rgba(102,231,255,.22)}
+
+/* gaming HUD details */
+section{position:relative}
+section:before{content:"// VS SYSTEM";position:absolute;right:20px;top:28px;font-size:9px;font-weight:900;letter-spacing:.35em;color:#28414d;pointer-events:none}
+#home:before{content:"SYSTEM ONLINE // 2026";color:#315866}
+
+nav{background:rgba(1,4,8,.9)!important;border-bottom:1px solid #15303b!important;box-shadow:0 10px 35px rgba(0,0,0,.5)}
+nav a:first-child{letter-spacing:-.04em}
+
+h1,h2,h3,p{position:relative}
+h1{font-size:clamp(3rem,7vw,6.8rem)!important;letter-spacing:-.075em!important;text-transform:uppercase}
+h2{text-transform:uppercase;letter-spacing:-.055em!important}
+
+.btn{display:inline-flex;align-items:center;justify-content:center;border-radius:7px;padding:13px 19px;font-weight:900;letter-spacing:.04em;text-transform:uppercase;transition:.2s;position:relative;overflow:hidden}
+.btn:after{content:"";position:absolute;inset:0;background:linear-gradient(120deg,transparent,rgba(255,255,255,.18),transparent);transform:translateX(-120%);transition:.45s}
+.btn:hover:after{transform:translateX(120%)}
+.btn-primary{background:var(--ice);color:#021016;box-shadow:0 0 24px rgba(102,231,255,.18)}
+.btn-primary:hover{transform:translateY(-2px);box-shadow:0 0 35px rgba(102,231,255,.42)}
+.btn-ghost{border:1px solid #294451;background:#071019;color:#d8f8ff}
+.btn-ghost:hover{border-color:var(--ice);box-shadow:0 0 18px rgba(102,231,255,.12)}
+
+/* angular gaming cards */
+.glass.rounded-2xl,.glass.rounded-3xl{border-radius:12px!important}
+.glass.group{position:relative;overflow:hidden}
+.glass.group:before,.glass.rounded-3xl:before{content:"";position:absolute;top:0;left:0;width:38px;height:2px;background:var(--ice);box-shadow:0 0 14px var(--ice)}
+.glass.group:after{content:"";position:absolute;right:-30px;bottom:-30px;width:100px;height:100px;border:1px solid rgba(102,231,255,.08);transform:rotate(45deg)}
+.glass.group:hover{border-color:rgba(102,231,255,.4);box-shadow:0 18px 55px rgba(0,0,0,.5),0 0 24px rgba(102,231,255,.08)}
+
+/* booking controls */
+input,select{color-scheme:dark!important}
+input:focus,select:focus{border-color:var(--ice)!important;box-shadow:0 0 0 2px rgba(102,231,255,.08),0 0 18px rgba(102,231,255,.08)}
+
+/* scanline / status pill */
+#home .inline-flex{box-shadow:0 0 22px rgba(102,231,255,.08),inset 0 0 18px rgba(102,231,255,.04)}
+
+@media(max-width:640px){
+ section:before{display:none}
+ h1{font-size:3.6rem!important}
+ body:before{opacity:.12}
+}
+
+
+/* polished booking states */
+button:disabled{filter:saturate(.65)}
+select option{background:#071019;color:#f4fbff}
+::selection{background:rgba(102,231,255,.25);color:#fff}
