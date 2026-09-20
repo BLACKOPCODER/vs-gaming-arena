@@ -1,15 +1,15 @@
 {
- "scripts": {
-  "dev": "next dev",
-  "build": "prisma generate && next build",
-  "start": "next start",
+  "scripts": {
+    "dev": "next dev",
+    "build": "prisma generate && next build",
+    "start": "next start",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.mjs",
     "db:studio": "prisma studio"
   },
   "dependencies": {
-    "next": "15.5.4",
+    "next": "15.5.9",
     "react": "19.1.1",
     "react-dom": "19.1.1",
     "lucide-react": "0.468.0",
