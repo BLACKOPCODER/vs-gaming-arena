@@ -1,8 +1,8 @@
 {
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
+ "scripts": {
+  "dev": "next dev",
+  "build": "prisma generate && next build",
+  "start": "next start",
     "db:generate": "prisma generate",
     "db:push": "prisma db push",
     "db:seed": "node prisma/seed.mjs",
